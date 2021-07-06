@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index,:edit]
 
-  resources :books, only: [:show, :index,:edit, :create]
+  resources :books, only: [:show, :index, :edit, :create,]
+
+  delete 'books/:id' => 'books#destroy', as:'destroy_book'
 
 end
