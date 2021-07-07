@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get 'home/about' => 'homes#about'
 
-  resources :users, only: [:show, :index,:edit]
+  resources :users, only: [:show, :index, :edit, :update]
 
-  resources :books, only: [:show, :index, :edit, :create,]
+  resources :books, only: [:show, :index, :edit, :create, :update]
 
   delete 'books/:id' => 'books#destroy', as:'destroy_book'
 

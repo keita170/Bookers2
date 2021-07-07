@@ -1,1 +1,18 @@
-<h1>aaaaaaaa</h1>
+<div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 px-5 px-sm-0 mx-auto">
+        <h2>User Info</h2>
+        <%= form_with model:@user, local:true do |f| %>
+        <p>Name</p>
+        <%= f.text_field :name, class:"form-control" %>
+        <p>Image</p>
+        <%= f.attachment_field :profile_image %>
+        <p>Introduction</p>
+        <%= f.text_area :introduction, class:"form-control" %><br>
+        <%= f.submit 'Update Book', class:"btn btn-secondary" %>
+        <% end %><br>
+      </div>
+    </div>
+  </div>
+</div>
