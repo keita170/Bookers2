@@ -69,7 +69,7 @@
         
         <div class="new-comment" >
             <%= form_with(model:[@booki, @comment], local:true) do |f| %>
-            <%= f.text_area :comment, class:"form-control " %><br>
+            <%= f.text_area :comment, size:"80x6" %><br>
             <%= f.submit "送信" %>
             <% end %>
         </div>
