@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index, :edit, :update] do
     resources :relationships, only: [:create, :destroy]
-    get 'followings' => 'relationships#followings', as:'followings'
-    get 'followers' => 'relationships#followers', as:'followers'
+    get 'followings' => 'relationships#followings'
+    get 'followers' => 'relationships#followers'
   end
 
   resources :books, only: [:show, :index, :edit, :create, :update] do
