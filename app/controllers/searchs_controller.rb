@@ -6,7 +6,6 @@ class SearchsController < ApplicationController
     @dates = search_for(@how, @model, @value)
   end
 
-
 private
 
 def match(model, value)
