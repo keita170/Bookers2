@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   get 'home/about' => 'homes#about'
 
-  resources :users, only: [:show, :index, :edit, :update]
+  resources :users, only: [:show, :index, :edit, :update] do
+    resources :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings' , as:'followings'
+    get 'followers' => 'relationships#followers' , as:'followers'
+  end
 
   resources :books, only: [:show, :index, :edit, :create, :update] do
     resources :favorites, only: [:create, :destroy]
@@ -14,5 +18,6 @@ Rails.application.routes.draw do
   end
 
   delete 'books/:id' => 'books#destroy', as:'destroy_book'
+
 
 end
