@@ -5,6 +5,8 @@ class SearchsController < ApplicationController
     @how = params['search']['how']
     @dates = search_for(@how, @model, @value)
   end
+  
+  
 
 private
 
