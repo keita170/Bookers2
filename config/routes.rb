@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
+  
+  
+  
+  
 
   delete 'books/:id' => 'books#destroy', as:'destroy_book'
 

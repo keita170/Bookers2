@@ -1,14 +1,31 @@
 class SearchsController < ApplicationController
   def search
-    @value = params['search']['value']
-    @model = params['search']['model']
-    @how = params['search']['how']
-    @dates = search_for(@how, @model, @value)
+    @value = params["value"]
+    @model = params["model"]
+    @method = params["method"]
+    @dates = search_for(@method, @model, @value)
   end
   
   
 
 private
+
+def search_for(method, model, value)
+  case method
+  when 'match'
+    match(model, value)
+  when 'forward'
+    forward(model, value)
+  when 'backward'
+    backward(model, value)
+  when 'partical'
+    partical(model, value)
+  end
+end
+
+
+
+
 
 def match(model, value)
   if model == 'user'
@@ -45,18 +62,6 @@ end
 
 
 
-def search_for(how, model, value)
-  case how
-  when 'match'
-    match(model, value)
-  when 'forward'
-    forward(model, value)
-  when 'backward'
-    backward(model, value)
-  when 'partical'
-    partical(model, value)
-  end
-end
 
 
 
