@@ -26,10 +26,10 @@
 
 
 
-            <th class="book_<%= @booki.id %>">
+            <th class="book">
               <%= render 'favorites/favorite-button', booki: @booki %>
             </th>
-            <th>
+            <th class="comment-view">
                 <p>コメント件数：<%= @booki.comments.count %></p>
             </th>
 
