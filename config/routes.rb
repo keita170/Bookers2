@@ -16,14 +16,15 @@ Rails.application.routes.draw do
   end
 
   resources :books, only: [:show, :index, :edit, :create, :update] do
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:create,]
+    delete 'favorites' => 'favorites#destroy', as:'favorite'
     resources :comments, only: [:create, :destroy]
   end
   
   
-  
-  
 
   delete 'books/:id' => 'books#destroy', as:'destroy_book'
+  
+  
 
 end
